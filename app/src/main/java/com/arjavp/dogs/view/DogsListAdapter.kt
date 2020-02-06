@@ -3,6 +3,7 @@ package com.arjavp.dogs.view
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.arjavp.dogs.R
 import com.arjavp.dogs.model.DogBreed
@@ -31,5 +32,8 @@ class DogsListAdapter(val dogsList: ArrayList<DogBreed>): RecyclerView.Adapter<D
     override fun onBindViewHolder(holder: DogViewHolder, position: Int) {
         holder.itemView.name.text=dogsList[position].dogBreed
         holder.itemView.lifespan.text=dogsList[position].lifeSpan
+        holder.itemView.setOnClickListener {
+            Navigation.findNavController(it).navigate(ListFragmentDirections.actionDetailFragment())
+        }
     }
 }
