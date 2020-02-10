@@ -2,6 +2,7 @@ package com.arjavp.dogs.util
 
 import android.content.Context
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.arjavp.dogs.R
 import com.bumptech.glide.Glide
@@ -26,3 +27,9 @@ fun ImageView.loadImage(uri: String?, progressDrawable: CircularProgressDrawable
         .into(this)// this refers to ImageView
 }
 //we have extended imageView class by a function loadImage we created.
+
+//name given to bindingAdapter becomes available as a parameter in item_dog.xml file.
+@BindingAdapter("android:imageUrl") //this annotation make below fun available to layout (to dataBinding library)
+fun loadImage(view: ImageView, url: String?){
+    view.loadImage(url, getProgressDrawable(view.context))
+}
