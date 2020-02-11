@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.arjavp.dogs.model.DogBreed
 import com.arjavp.dogs.model.DogDatabase
 import com.arjavp.dogs.model.DogsApiService
+import com.arjavp.dogs.util.NotificationsHelper
 import com.arjavp.dogs.util.SharedPreferencesHelper
 import com.arjavp.dogs.view.DogsListAdapter
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -63,6 +64,7 @@ class ListViewModel(application: Application): BaseViewModel(application) {
                         //when we retrieve info from endpoint, we will store it in db and then update UI.
                         storeDogsLocally(dogList)
                         Toast.makeText(getApplication(), "Dogs retrieved from endpoint", Toast.LENGTH_SHORT).show()
+                        NotificationsHelper(getApplication()).createNotification()//creates notif when we retrieve info from backend.
                     }
 
                     override fun onError(e: Throwable) {
