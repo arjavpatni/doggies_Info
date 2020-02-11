@@ -43,3 +43,5 @@ data class DogBreed(//data class doesn't necessarily need a body.
     @PrimaryKey(autoGenerate = true)
     var uuid: Int = 0
 }
+
+data class DogPalette(var color: Int)
