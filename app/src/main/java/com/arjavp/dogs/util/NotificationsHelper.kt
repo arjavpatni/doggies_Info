@@ -36,9 +36,9 @@ class NotificationsHelper(val context: Context) {
             .setContentTitle("Dogs retrieved")
             .setContentText("This notification has some content")
             .setStyle(
-                NotificationCompat.BigPictureStyle()
+                NotificationCompat.BigPictureStyle()//on expansion we wll se big picture of dog.png
                     .bigPicture(icon)
-                    .bigLargeIcon(null)
+                    .bigLargeIcon(null)//large icon will disappear on expansion
             )
             .setContentIntent(pendingIntent)// pendingIntent calls intent for MainActivity when user clicks on icon.
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
