@@ -28,10 +28,10 @@ class NotificationsHelper(val context: Context) {
         }
 
         val pendingIntent = PendingIntent.getActivity(context,0,intent,0)
-        val icon = BitmapFactory.decodeResource(context.resources, R.drawable.dog)
+        val icon = BitmapFactory.decodeResource(context.resources, R.drawable.ic_dog_icon_background)
 
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)// creating notification
-            .setSmallIcon(R.drawable.dog_icon)
+            .setSmallIcon(R.drawable.ic_dog_icon_background)
             .setLargeIcon(icon)
             .setContentTitle("Dogs retrieved")
             .setContentText("This notification has some content")
