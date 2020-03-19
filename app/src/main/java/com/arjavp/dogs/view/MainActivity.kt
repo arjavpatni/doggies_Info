@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                     .setNegativeButton("No"){dialog, which ->
                         notifyDetailFragment(false)
                     }
+                    .show()
             }else{
             requestSmsPermission()
             }
